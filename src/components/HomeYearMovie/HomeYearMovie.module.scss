@@ -1,0 +1,49 @@
+@import '../../assets/styles/mixins';
+
+.wrap_movie {
+    padding: 6.25em 0 6.25em 0;
+    background-position: top center !important;
+    background-size: cover !important;
+    position: relative;
+    background-attachment: fixed !important;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000000;
+        opacity: 0.8;
+        transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    }
+
+    .wrap_description {
+        position: relative;
+        z-index: 1;
+
+        @media screen and (min-width: 1600px) {
+            width: 37.5em;
+        }
+
+        @media screen and (max-width:996px) {
+            margin-bottom: 2em;
+        }
+
+        .title {
+            @include big-title;
+        }
+
+    }
+
+    .img_wrap {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+}

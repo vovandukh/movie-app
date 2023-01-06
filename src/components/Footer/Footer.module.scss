@@ -1,0 +1,86 @@
+@import '../../assets/styles/variables';
+
+.footer {
+    background-color: $bg-1;
+    padding-top: 3.75em;
+    padding-bottom: 3.75em;
+    margin-top: 6.25em;
+
+    @media screen and (max-width: 1060px) {
+        margin-top: 3.125em;
+    }
+
+    @media screen and (max-width: 767px) {
+        margin-top: 1.875em;
+    }
+
+    .footer_menu {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            padding-right: 1.875em;
+            margin-bottom: 0.25em;
+
+            a {
+                color: $white;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .text {
+        margin: 0.9375em 0;
+        line-height: 1.66em;
+        width: 46.875em;
+        font-size: .875em;
+
+        @media screen and (max-width: 1600px) {
+            width: auto;
+        }
+    }
+
+    h6 {
+        color: $white;
+        margin-bottom: 1.25em;
+        margin-top: 0;
+    }
+
+    .share_social {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+
+        li {
+            margin-right: 0.75em;
+            margin-bottom: 0.9375em;
+
+            a {
+                display: inline-block;
+                width: 2.5em;
+                height: 2.5em;
+                background: rgba(41, 41, 41, .76);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $white;
+                transition: all .4s ease 0s;
+
+                &:hover {
+                    box-shadow: 0 0 0.625em #bf000a;
+                    color: #bf000a;
+                }
+
+            }
+        }
+    }
+
+    .logodb {
+        @media screen and (max-width:991px) {
+            max-width: 15em;
+        }
+    }
+}

@@ -1,0 +1,166 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.card_wrap {
+    @include movie-card;
+
+    .block_description {
+        @include movie-card-block-description;
+
+        .title {
+            @include movie-card-title;
+            white-space: normal;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .info {
+            color: $primary;
+            font-weight: 600;
+
+            span {
+                color: $white;
+            }
+        }
+
+        .play_btn_wrap {
+            display: block;
+
+            @media screen and (max-width: 576px) {
+                display: none;
+            }
+        }
+    }
+
+    &:hover {
+        z-index: 12;
+        box-shadow: 0px 0px 0.75em rgb(0 0 0 / 90%);
+
+        &::before {
+            opacity: 1
+        }
+    }
+
+    .block_social {
+        position: absolute;
+        top: 0;
+        left: auto;
+        bottom: 0;
+        right: 1.563em;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+
+        @media screen and (max-width: 740px) {
+            display: none;
+        }
+
+        ul {
+            li {
+
+                width: 2.5em;
+                height: 2.5em;
+                background: rgba(255, 255, 255, 0.30);
+                text-align: center;
+                margin: 0 auto 0.4375em;
+                border-radius: 50%;
+                color: $primary;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.45s ease 0s;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 1.875em;
+                    height: 1.875em;
+                    font-size: 0.9375em;
+                    line-height: 1.625em;
+                    background: $white;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+
+                button {
+                    width: 1.875em;
+                    height: 1.875em;
+                    border: none;
+                    outline: none;
+                    background: $white;
+                    color: inherit;
+                    border-radius: 50%;
+                }
+
+                &:hover {
+                    color: $white;
+
+                    span {
+                        background: $primary !important;
+                    }
+
+                    button {
+                        background: $primary !important;
+                    }
+                }
+
+                .share_list_wrap {
+                    position: absolute;
+                    width: 7rem;
+                    height: 2.5em;
+                    right: 2.2em;
+                    opacity: 0;
+
+                    .share_box {
+                        position: absolute;
+                        height: 2.5em;
+                        top: -0.0625em;
+                        right: 0.6875em;
+                        left: auto;
+                        background-color: $bg-1;
+                        padding: 0 0 0 0.7em;
+                        border-radius: 0;
+                        text-align: center;
+                        z-index: 12;
+                        margin-bottom: 0.625em;
+
+                        svg {
+                            position: absolute;
+                            right: -0.9em;
+                            top: 0;
+                            width: 0.9375em;
+                            height: 2.5em;
+                        }
+
+                        a {
+                            background: transparent !important;
+                            color: $body-text !important;
+                            line-height: 2.4em;
+                            margin-right: 0.9375em;
+                            transition: all .3s ease-in-out;
+
+                            &:hover {
+                                color: $primary !important;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    .share_list_wrap {
+                        opacity: 1;
+                    }
+                }
+
+            }
+        }
+    }
+
+    &:hover {
+        .block_social {
+            opacity: 1;
+        }
+    }
+}

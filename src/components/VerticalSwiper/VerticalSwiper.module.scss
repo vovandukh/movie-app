@@ -1,0 +1,38 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+
+.slides {
+    @include movie-card;
+
+    .block_description {
+        @include movie-card-block-description;
+
+        .title {
+            @include movie-card-title;
+        }
+
+        .info {
+            color: $primary;
+            font-weight: 600;
+
+            span {
+                color: $white;
+            }
+        }
+
+        .btn_wrap {
+            display: none;
+        }
+    }
+}
+
+.active {
+    &::before {
+        opacity: 1 !important;
+    }
+
+    .btn_wrap {
+        display: block !important;
+    }
+}

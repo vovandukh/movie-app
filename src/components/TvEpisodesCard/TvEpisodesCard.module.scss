@@ -1,0 +1,20 @@
+@import '../../assets/styles/variables';
+
+.card {
+    background-color: $bg-1;
+    border-radius: 0;
+
+    img {
+        border-radius: 0;
+    }
+
+    p {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .runtime {
+        color: $primary;
+    }
+}

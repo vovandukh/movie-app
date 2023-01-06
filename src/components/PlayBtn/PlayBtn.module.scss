@@ -1,0 +1,38 @@
+.play_btn_wrap {
+    padding: 0.55em 1.2em;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    overflow: hidden;
+    color: #fff;
+    background: #bf000a;
+    position: relative;
+
+    span {
+        display: inline-block;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #e50914;
+        transform: scaleX(1);
+        transform-origin: 50%;
+        transition: transform .3s ease-out;
+    }
+
+    &:hover {
+        &::before {
+            transform: scaleX(0);
+        }
+    }
+
+}
+
+.btn_wrap {
+    position: relative;
+}

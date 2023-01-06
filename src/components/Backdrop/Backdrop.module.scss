@@ -1,0 +1,55 @@
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: #0b0b0bc2;
+    transition: all 0.15s ease-out;
+    padding:40px 0;
+    text-align: center;
+    z-index:100000;
+}
+.iframe_holder {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin:0 auto;
+    text-align: left;
+    z-index:1045;
+}
+.iframe_wrap {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    position: relative;
+    button {
+        color: #FFF;
+        right: -6px;
+        text-align: right;
+        padding-right: 6px;
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-style: normal;
+        font-size: 28px;
+        font-family: Arial, Baskerville, monospace;
+        opacity: 0.65;
+        &:hover {
+            opacity: 1
+        }
+    }
+    iframe {
+        opacity: 1 !important;
+        display: block;
+        width: 100%;
+        height: 95%;
+        box-shadow: 0 0 8px rgb(0 0 0 / 60%);
+        background: #000 !important;
+    }
+
+}

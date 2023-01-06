@@ -1,0 +1,176 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.slider_wrap {
+    height: 100vh;
+
+    @media screen and (max-width: 767px) {
+        height: auto;
+    }
+
+    .slides {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+
+        @media screen and (max-width: 991px) {
+            padding-top: 2.5em;
+        }
+
+        @media screen and (max-width: 767px) {
+            height: 28.125em;
+        }
+
+        @media screen and (max-width: 479px) {
+            height: 21.875em;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 90%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0.9) 15%, rgba(83, 100, 141, 0) 100%);
+            z-index: 1;
+        }
+
+        .logo_wrap {
+            @include hero-logo;
+        }
+
+        .big_title {
+            @include big-title;
+        }
+
+        .overview {
+            width: 37.5em;
+            margin: 2em 0;
+
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+
+        }
+
+        .score_title {
+            font-size: 1.125em;
+            font-weight: 600;
+            color: $primary;
+        }
+
+        .genres_title {
+            display: flex;
+            margin: 0 0 1.875em 0;
+
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+
+            ul {
+                font-size: 1em;
+                padding: 0;
+                font-weight: 400;
+                color: $white;
+                display: flex;
+
+                .genre_item {
+                    margin-left: 0.413em;
+                    font-size: 1em;
+                    font-weight: 400;
+
+                    &::after {
+                        content: ',';
+                        margin: 0;
+                        height: 100%;
+                    }
+
+                    &:last-child {
+                        &::after {
+                            content: '';
+                        }
+                    }
+                }
+            }
+        }
+
+        .play_btn_wrap {
+            margin: 0;
+
+            @media screen and (max-width: 767px) {
+                margin: 20px 0;
+            }
+        }
+
+        .watch_btn_wrap {
+            text-align: center;
+
+            @media screen and (max-width: 1300px) {
+
+                text-align: right !important
+            }
+
+            .watch_btn {
+                background: transparent;
+                border: none;
+                outline: none;
+                transition: all 0.5s ease;
+
+                @media screen and (max-width: 1300px) {
+                    transform: scale(0.7);
+                }
+
+                span {
+                    font-size: 1.250em;
+                    text-transform: uppercase;
+                    letter-spacing: 0.2187em;
+                    font-weight: 400;
+                    color: $white;
+                    margin-left: 0.9375em;
+                    vertical-align: middle;
+
+                    @media screen and (max-width: 1300px) {
+                        font-size: 1.1em;
+                    }
+
+                }
+
+            }
+
+            svg {
+                polygon {
+                    stroke: $white;
+                    stroke-dasharray: 240;
+                    stroke-dashoffset: 480;
+                    transition: all 0.5s ease;
+                }
+
+                circle {
+                    stroke: $white;
+                    stroke-dasharray: 650;
+                    stroke-dashoffset: 1300;
+                    transition: all 0.5s ease;
+                }
+            }
+
+            &:hover {
+                svg {
+                    polygon {
+                        stroke: $primary;
+                        stroke-dashoffset: 0;
+                    }
+
+                    circle {
+                        stroke: $primary !important;
+                        stroke-dashoffset: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
