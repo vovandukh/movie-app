@@ -5,12 +5,12 @@ import Banner from '../components/Banner/Banner';
 import { useGetPopularMoviesQuery, useGetTopRatedMoviesQuery, useGetUpcomingMoviesQuery, useGetNowPlayingMoviesQuery } from '../features/MoviesApi'
 import { skipToken } from '@reduxjs/toolkit/dist/query';
 import MovieCard from './../components/MovieCard/MovieCard';
-import Paginate from '../components/Pagination/Paginate';
+import Pagination from '../components/Pagination/Pagination';
 
 const Movies = () => {
     const { params } = useParams();
     const [title, setTitle] = useState();
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(1);
     const popularMovies = useGetPopularMoviesQuery(params === 'popular' ? page : skipToken);
     const topRatedMovies = useGetTopRatedMoviesQuery(params === 'top-rated' ? page : skipToken);
     const upcomingMovies = useGetUpcomingMoviesQuery(params === 'upcoming' ? page : skipToken);
@@ -25,8 +25,8 @@ const Movies = () => {
         } else if (params === 'top-rated') {
             setTitle('Top Rated Movies')
         }
+        setPage(1)
     }, [params])
-
     return (
         <>
             <Banner title={title} />
@@ -56,9 +56,7 @@ const Movies = () => {
                                         null
                         }
                     </Row>
-                    <Paginate
-                        setPage={setPage}
-                    />
+                  <Pagination setPage={setPage} currentPage={page}/>
                 </section>
             </Container>
         </>

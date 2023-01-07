@@ -1,0 +1,32 @@
+@import '../../assets/styles/variables';
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    li {
+        cursor: pointer;
+        width: 2.8125em;
+        height: 2.8125em;
+        text-align: center;
+        line-height: 2.8125em;
+        margin-left: 0.3125em;
+        color: #6c757d;
+        background: $bg-1;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            background: $primary;
+            color: $white;
+        }
+
+        .pagination_elipsis {
+            font-weight: bold;
+        }
+    }
+
+    .active {
+        background: $primary;
+        color: $white;
+    }
+}

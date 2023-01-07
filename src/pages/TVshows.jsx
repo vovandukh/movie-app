@@ -5,10 +5,12 @@ import { useGetTopRatedTvShowsQuery, useGetPopularTvShowsQuery, useGetAiringToda
 import { skipToken } from '@reduxjs/toolkit/dist/query';
 import { Container, Row, Col } from 'react-bootstrap';
 import MovieCard from './../components/MovieCard/MovieCard';
+import Pagination from '../components/Pagination/Pagination';
 
 const TVshows = () => {
     const [title, setTitle] = useState();
     const { params } = useParams();
+    const [page, setPage] = useState(1);
     useEffect(() => {
         if (params === 'popular') {
             setTitle('Popular TV Shows');
@@ -19,11 +21,12 @@ const TVshows = () => {
         } else if (params === 'top-rated') {
             setTitle('Top Rated TV Shows')
         }
+        setPage(1)
     }, [params])
-    const TopRatedTvShows = useGetTopRatedTvShowsQuery(params === 'top-rated' ? 1 : skipToken);
-    const PopularTvShows = useGetPopularTvShowsQuery(params === 'popular' ? 1 : skipToken);
-    const AirTodayTvShows = useGetAiringTodayTvShowsQuery(params === 'airing-today' ? 1 : skipToken);
-    const OnTheAirTvShows = useGetOnTheAirTvShowsQuery(params === 'on-the-air' ? 1 : skipToken);
+    const TopRatedTvShows = useGetTopRatedTvShowsQuery(params === 'top-rated' ? page : skipToken);
+    const PopularTvShows = useGetPopularTvShowsQuery(params === 'popular' ? page : skipToken);
+    const AirTodayTvShows = useGetAiringTodayTvShowsQuery(params === 'airing-today' ? page : skipToken);
+    const OnTheAirTvShows = useGetOnTheAirTvShowsQuery(params === 'on-the-air' ? page : skipToken);
 
     return (
         <>
@@ -54,6 +57,7 @@ const TVshows = () => {
                                         null
                         }
                     </Row>
+                    <Pagination setPage={setPage} currentPage={page}/>
                 </section>
             </Container>
         </>
