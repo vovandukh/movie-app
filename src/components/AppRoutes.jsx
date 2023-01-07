@@ -6,10 +6,12 @@ import { HOME_ROUTE } from './../utils/consts';
 const AppRoutes = () => {
     return (
         <Routes>
+            <Route path='/' element={<Navigate to={HOME_ROUTE} />} />
             {routes.map(el => (
                 <Route key={el.path} path={el.path} element={el.components} />
             ))}
-            <Route path='/' element={<Navigate to={HOME_ROUTE} />} />
+
+            {/* <Route path='/' element={<Home />} /> */}
         </Routes>
     );
 };

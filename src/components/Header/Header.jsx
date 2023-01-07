@@ -18,15 +18,15 @@ const Header = (props) => {
                         <ul className='navbar-nav'>
                             <li className={classes.nav_item}><NavLink to={HOME_ROUTE} className={classes.nav_link}><span>Home</span></NavLink></li>
                             <li className={classes.nav_item}>
-                                <NavLink to={MOVIES_ROUTE} className={classes.nav_link}>
+                                <NavLink className={classes.nav_link}>
                                     <span>Movies</span>
                                     <i className='fas fa-caret-down ms-1'></i>
                                 </NavLink>
                                 <ul className={classes.sub_menu}>
-                                    <li><NavLink className={classes.sub_link}>Popular</NavLink></li>
-                                    <li><NavLink className={classes.sub_link}>Now Playing</NavLink></li>
-                                    <li><NavLink className={classes.sub_link}>Upcoming</NavLink></li>
-                                    <li><NavLink className={classes.sub_link}>Top Rated</NavLink></li>
+                                    <li><NavLink to={'movies/popular'} className={classes.sub_link}>Popular</NavLink></li>
+                                    <li><NavLink to={'movies/now-playing'} className={classes.sub_link}>Now Playing</NavLink></li>
+                                    <li><NavLink to={'movies/upcoming'} className={classes.sub_link}>Upcoming</NavLink></li>
+                                    <li><NavLink to={'movies/top-rated'} className={classes.sub_link}>Top Rated</NavLink></li>
                                 </ul>
                             </li>
                             <li className={classes.nav_item}>
@@ -35,10 +35,10 @@ const Header = (props) => {
                                     <i className='fas fa-caret-down ms-1'></i>
                                 </NavLink>
                                 <ul className={classes.sub_menu}>
-                                    <li><NavLink className={classes.sub_link}>Popular</NavLink></li>
-                                    <li><NavLink className={classes.sub_link}>Airing Today</NavLink></li>
-                                    <li><NavLink className={classes.sub_link}>On TV</NavLink></li>
-                                    <li><NavLink className={classes.sub_link}>Top Rated</NavLink></li>
+                                    <li><NavLink to={'tv/popular'} className={classes.sub_link}>Popular</NavLink></li>
+                                    <li><NavLink to={'tv/airing-today'} className={classes.sub_link}>Airing Today</NavLink></li>
+                                    <li><NavLink to={'tv/on-the-air'} className={classes.sub_link}>On TV</NavLink></li>
+                                    <li><NavLink to={'tv/top-rated'} className={classes.sub_link}>Top Rated</NavLink></li>
                                 </ul>
                             </li>
                             <li className={classes.nav_item}><NavLink to={CELEBRITIES_ROUTE} className={classes.nav_link}><span>Celebrities</span></NavLink>

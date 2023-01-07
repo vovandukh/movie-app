@@ -1,0 +1,45 @@
+@import '../../assets/styles/variables';
+
+.banner {
+    display: block;
+    padding: 9.375em 0 5em;
+    z-index: 1;
+    position: relative;
+    background-position: 50% !important;
+    background-size: cover;
+
+    .title {
+        font-size: 3.157em;
+    }
+
+    .breadcrumb {
+        margin-top: 0.9375em;
+
+        ol {
+            justify-content: center;
+
+            li {
+                font-weight: 700;
+                color: $primary;
+                padding-left: 0.5em;
+
+                a {
+                    color: inherit;
+                    text-transform: capitalize !important;
+                }
+
+                &::before {
+                    content: '>';
+                    color: inherit;
+                    padding-right: 0.5em;
+                }
+
+                &:first-child {
+                    &::before {
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+}

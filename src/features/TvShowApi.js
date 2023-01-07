@@ -12,6 +12,12 @@ export const tvShowsApi = createApi({
         getPopularTvShows: builder.query({
             query: (page = '') => `/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
         }),
+        getAiringTodayTvShows: builder.query({
+            query: (page = '') => `/tv/airing_today?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
+        }),
+        getOnTheAirTvShows: builder.query({
+            query: (page = '') => `/tv/on_the_air?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
+        }),
         getTvShowsVideo: builder.query({
             query: (id) => `/tv/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}`
         }),
@@ -27,6 +33,8 @@ export const tvShowsApi = createApi({
 export const {
     useGetTopRatedTvShowsQuery,
     useGetPopularTvShowsQuery,
+    useGetAiringTodayTvShowsQuery,
+    useGetOnTheAirTvShowsQuery,
     useGetTvShowsVideoQuery,
     useGetDetailShowsQuery,
     useGetSeasonsShowsQuery

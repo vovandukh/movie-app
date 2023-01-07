@@ -14,6 +14,9 @@ export const moviesApi = createApi({
         getTopRatedMovies: builder.query({
             query: (page = '') => `/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}${page ? `&page=${page}` : ''}`,
         }),
+        getNowPlayingMovies: builder.query({
+            query: (page = '') => `/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}${page ? `&page=${page}` : ''}`,
+        }),
         getMovieVideo: builder.query({
             query: (id) => `/movie/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}`
         })
@@ -25,5 +28,6 @@ export const {
     useGetPopularMoviesQuery,
     useGetUpcomingMoviesQuery,
     useGetTopRatedMoviesQuery,
-    useGetMovieVideoQuery
+    useGetMovieVideoQuery,
+    useGetNowPlayingMoviesQuery
 } = moviesApi
