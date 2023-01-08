@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import classes from './Sidebar.module.scss';
 import logo from '../../assets/images/logo.png';
 import { Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = (props) => {
     const { sideShow, setSideShow } = props;
@@ -26,17 +27,17 @@ const Sidebar = (props) => {
             </div>
             <div className={classes.menu_wrap}>
                 <ul className={classes.menu}>
-                    <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Home</Nav.Link></li>
+                    <li className={classes.menu_item}><NavLink to={'/home'} className={classes.menu_link}>Home</NavLink></li>
                     <li className={classes.menu_item}>
                         <Nav.Link className={classes.menu_link}>Movies</Nav.Link>
                         <button className={classes.submenu_toggler} onClick={() => showSubDropdowm('movies')}>
                             {showSubMovies ? <i className='fas fa-minus'></i> : <i className='fas fa-plus'></i>}
                         </button>
                         <ul className={classes.sub_menu} style={showSubMovies ? { maxHeight: '500px' } : null}>
-                            <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Popular</Nav.Link></li>
-                            <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Now Playing</Nav.Link></li>
-                            <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Upcoming</Nav.Link></li>
-                            <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Top Rated</Nav.Link></li>
+                            <li className={classes.menu_item}><NavLink to={'movies/popular'} className={classes.menu_link}>Popular</NavLink></li>
+                            <li className={classes.menu_item}><NavLink to={'movies/now-playing'} className={classes.menu_link}>Now Playing</NavLink></li>
+                            <li className={classes.menu_item}><NavLink to={'movies/upcoming'}  className={classes.menu_link}>Upcoming</NavLink></li>
+                            <li className={classes.menu_item}><NavLink to={'movies/top-rated'} className={classes.menu_link}>Top Rated</NavLink></li>
                         </ul>
                     </li>
                     <li className={classes.menu_item}>
@@ -45,10 +46,10 @@ const Sidebar = (props) => {
                             {showSubTv ? <i className='fas fa-minus'></i> : <i className='fas fa-plus'></i>}
                         </button>
                         <ul className={classes.sub_menu} style={showSubTv ? { maxHeight: '500px' } : null} >
-                            <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Popular</Nav.Link></li>
-                            <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Airing Today</Nav.Link></li>
-                            <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>On TV</Nav.Link></li>
-                            <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Top Rated</Nav.Link></li>
+                            <li className={classes.menu_item}><NavLink to={'tv/popular'} className={classes.menu_link}>Popular</NavLink></li>
+                            <li className={classes.menu_item}><NavLink to={'tv/airing-today'} className={classes.menu_link}>Airing Today</NavLink></li>
+                            <li className={classes.menu_item}><NavLink to={'tv/on-the-air'} className={classes.menu_link}>On TV</NavLink></li>
+                            <li className={classes.menu_item}><NavLink to={'tv/top-rated'} className={classes.menu_link}>Top Rated</NavLink></li>
                         </ul>
                     </li>
                     <li className={classes.menu_item}><Nav.Link className={classes.menu_link}>Celebrities</Nav.Link></li>

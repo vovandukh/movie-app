@@ -3,7 +3,7 @@ import classes from './Header.module.scss';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../../assets/images/logo.png';
 import { NavLink } from 'react-router-dom';
-import { HOME_ROUTE, MOVIES_ROUTE, TV_ROUTE, CELEBRITIES_ROUTE, BLOG_ROUTE } from '../../utils/consts';
+import { HOME_ROUTE, CELEBRITIES_ROUTE, BLOG_ROUTE } from '../../utils/consts';
 
 const Header = (props) => {
     const { showSearch, setShowSearch, showUserDropdown, setShowUserDropdown, setSideShow } = props;
@@ -30,7 +30,7 @@ const Header = (props) => {
                                 </ul>
                             </li>
                             <li className={classes.nav_item}>
-                                <NavLink to={TV_ROUTE} className={classes.nav_link}>
+                                <NavLink className={classes.nav_link}>
                                     <span>TV Shows</span>
                                     <i className='fas fa-caret-down ms-1'></i>
                                 </NavLink>

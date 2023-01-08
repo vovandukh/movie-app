@@ -14,29 +14,29 @@ const Pagination = props => {
             <span>{i}</span>
           </li>
     };
-    const createElipsis = ()=>{
-        return <li><span className={classes.pagination_elipsis}>...</span></li>
+    const createElipsis = (key)=>{
+        return <li key={key}><span className={classes.pagination_elipsis}>...</span></li>
     }
         
         const setFirstElem = () =>{
             for(let i = 1 ; i <= 10 ; i++){
                 paginationItems.push(createPaginationItem(i))
             }
-            paginationItems.push(createElipsis())  
+            paginationItems.push(createElipsis(totalPages + 1))  
             paginationItems.push(createPaginationItem(totalPages))
         }
         const setNextElem = ()=>{
             paginationItems.push(createPaginationItem(1))
-            paginationItems.push(createElipsis())  
+            paginationItems.push(createElipsis(totalPages + 1))  
             for (let i = currentPage -4; i <= currentPage + 4; i++){
                 paginationItems.push(createPaginationItem(i))
             }
-            paginationItems.push(createElipsis())  
+            paginationItems.push(createElipsis(totalPages+2))  
             paginationItems.push(createPaginationItem(totalPages))
         }
         const setLastElem = () =>{
             paginationItems.push(createPaginationItem(1))
-            paginationItems.push(createElipsis()) 
+            paginationItems.push(createElipsis(totalPages + 3)) 
             for (let i = currentPage -4; i <= totalPages; i++){
                 paginationItems.push(createPaginationItem(i))
             } 
@@ -48,8 +48,6 @@ const Pagination = props => {
         } else {
             setLastElem()
         }
-
- 
     return (
         <ul className={classes.pagination}>
             <li>
